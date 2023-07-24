@@ -1,0 +1,15 @@
+   AREA ANS2,CODE,READONLY
+	                    THUMB
+	                    ENTRY
+	                    EXPORT __main
+                  __main 
+	                    LDR R0,=0X0123ABCD
+	                    UXTB R1,R0
+	                   SXTB  R2,R0
+	                   REV R3,R0
+	                  REV16 R4,R0
+	                  REVSH R5,R0
+	                  UBFX R6,R0,#4,#4
+	                  SBFX R7,R0,#12,#4
+                  LOOP  B LOOP
+	                  END
