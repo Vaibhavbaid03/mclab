@@ -1,0 +1,14 @@
+         AREA ANS2,CODE,READONLY
+			   THUMB
+		     ENTRY
+		     EXPORT __main
+__main
+
+         MOV R1,#0X20000000
+			   MOV R2,#0X40000000
+			   ADDS R3,R2,R1
+			   SUBS R4,R2,R1
+			   DIV R5,R2,R1
+			   MUL R6,R2,R1
+ STOP    B STOP
+         END  
