@@ -1,0 +1,23 @@
+       AREA ANS3,CODE,READONLY
+	     THUMB
+	     ENTRY
+       EXPORT __main
+ __main
+         LDR R0, =0x20000000
+         LDR R3, =0x20002000
+	       MOV R4,#0X05
+         LDR R2, =0X00000000
+	       MOV R5,#0X099
+    BACK
+         LDRB R1, [R0]
+         CMP R1, R5
+         BNE NEXT
+         ADD R2, #01
+   NEXT 
+         ADD R0, R0, #01
+         SUB R4, R4, #01
+         CMP R4, #00
+         BNE BACK
+         STR R2, [R3]
+STOP       B STOP
+         END   
