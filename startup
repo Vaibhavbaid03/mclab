@@ -1,0 +1,14 @@
+STACK_ADDR_123G EQU   0X20008000
+				THUMB
+				AREA ANS, DATA, READONLY
+				EXPORT __Vectors
+__Vectors
+				DCD STACK_ADDR_123G
+				DCD Reset_Handler
+			
+				AREA ANS1, CODE, READONLY
+				ENTRY
+				EXPORT Reset_Handler
+Reset_Handler
+				IMPORT __main
+				END
