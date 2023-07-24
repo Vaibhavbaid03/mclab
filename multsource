@@ -1,0 +1,25 @@
+
+                                                 AREA ANS2, CODE, READONLY
+                                                 THUMB
+                                                 ENTRY
+                                                 IMPORT addnum
+                                                 EXPORT __main
+                      __main
+                                                MOV R0, #5
+                                                MOV R1, #0
+                                                BL addnum
+                                                NOP
+                     STOP                 B STOP
+                                                END
+   
+                                                AREA ANS3, CODE, READONLY
+                                                EXPORT addnum
+                      addnum
+
+                      LOOP        
+			           ADD R1, R0
+                                                  SUBS R0, #01
+                                                  BNE LOOP
+                                                  BX LR
+                                                  NOP
+                                                  END
