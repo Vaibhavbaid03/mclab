@@ -1,0 +1,19 @@
+           AREA ANS2,CODE,READONLY
+		              THUMB
+		               ENTRY
+		                EXPORT __main
+__main
+
+                                      LDR R1,=0X20000000
+			 LDR R2,=0X20000008
+			 LDR R3,[R1]
+			 LDR R4,[R2]
+			 MOV R0,#0X00000000
+LOOP
+			 ADD R0,R0,R3
+			 SUBS R4,R4,#1
+			 CMP R4,#0
+			 BNE LOOP
+			 MOV R5,R0
+STOP                            B STOP
+                                      END  
