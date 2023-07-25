@@ -1,0 +1,13 @@
+      
+                             AREA ANS2,CODE,READONLY
+			 THUMB
+		             ENTRY
+		             EXPORT __main
+__main
+                             LDR R0,=0X20000000
+                             LDR R2,=0X20004000
+			 LDR R1,[R0]
+			 LSR R1,R1#2
+                             STR R1, [R2]
+STOP                    B  STOP
+                             END
