@@ -1,0 +1,15 @@
+#include "TM4C123GH6PM.h" int main(void)
+{
+unsigned int value;
+SYSCTL->RCGCGPIO |= 0x20;	/* enable clock to GPIOF */
+GPIOF->DIR = 0x0E;
+GPIOF->DEN = 0x12;
+GPIOF->PUR = 0x10;
+while(1)
+{
+value = GPIOF->DATA;	/* read data from PORTF */
+value = ~value;	/* switch is low active; LED is high active */
+value = value >> 1;		/* shift it right to display on red LED */
+GPIOF->DATA = value;		/* put it on red LED */
+}
+}
